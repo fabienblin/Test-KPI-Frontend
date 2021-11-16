@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1, h2{
+	text-shadow: 1px 1px black;
+	font-weight: bold;
+}
+
+a{
+	color: rgb(87, 129, 96);
+}
+	#nav a{
+		color: white;
+	}
+
+	#nav a:hover{
+		color: rgb(147, 179, 154);
+	}
+
+#header{
+	height: 15vh;
+	background-color: rgb(71, 119, 81);
+	color: white;
+}
+	#header > .row{
+		height: 100%;
+	}
+
+#middle{
+	height: 80vh;
+}
+	#middle > .row{
+		height: 100%;
+	}
+
+#nav{
+ background-color: rgb(116, 116, 116);
+ color: white;
+}
+
+#main{
+	color: rgb(61, 90, 67);
+}
+
+#footer{
+	height: 5vh;
+	background-color: rgb(63, 63, 63);
+	color: white;
+}
+	#footer > .row{
+		height: 100%;
+	}
+
+.nav-item form{
+	padding: 15px;
+}
+
+#short-infos{
+	height: 30px;
+	background-color: rgb(41, 70, 47);
+	color: white;
+	font-size: 0.8em;
+}
