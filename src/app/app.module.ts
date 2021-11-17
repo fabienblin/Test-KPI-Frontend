@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { InvestmentsComponent } from './investments/investments.component';
 import { InvestmentDetailComponent } from './investment-detail/investment-detail.component';
 import { HomeComponent } from './home/home.component';
+import { InvestmentSearchComponent } from './investment-search/investment-search.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     InvestmentsComponent,
     InvestmentDetailComponent,
-    HomeComponent
+    HomeComponent,
+    InvestmentSearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+	HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

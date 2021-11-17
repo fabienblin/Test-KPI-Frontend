@@ -1,5 +1,8 @@
-<div id="principal" class="row">
-	<div class="col">
-		INVESTMENTS
-	</div>
-</div>
+<h3>List Of All Investments</h3>
+<ul>
+	<li *ngFor="let investment of investments">
+		<a routerLink="/detail/{{investment.id}}">
+			{{investment.titreoperation}}
+		</a>
+	</li>
+</ul>

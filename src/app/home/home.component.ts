@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,5 +11,4 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public env = environment.backend_url
 }

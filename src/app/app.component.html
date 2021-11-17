@@ -29,27 +29,27 @@
 					<nav>
 						<ul class="nav flex-column">
 							<li class="nav-item">
-								<form>
-									<label for="search">Get Investment By ID</label>
-									<div class="input-group mb-3">
-										<input name="search" type="text" class="form-control" placeholder="ID" aria-label="Recipient's username"
-											aria-describedby="button-addon2">
-										<button class="btn btn-outline-light" type="button"	id="button-addon2">Search</button>
-									</div>
-
-								</form>
+								<div id="padded-nav-item">
+									<app-investment-search></app-investment-search>
+								</div>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">Home</a>
+								<a class="nav-link" routerLink="/home">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">List Investments</a>
+								<a class="nav-link" routerLink="/investments">List Investments</a>
 							</li>
 						</ul>
 					</nav>
 				</div>
-				<div id="main" class="col">
-					<router-outlet></router-outlet>
+				<div id="main" class="col-10">
+					<div id="short-infos" class="row align-items-center"><div class="col">short-infos</div></div>
+					<div id="page-title" class="row align-items-center"><div class="col">TITLE</div></div>
+					<div id="principal" class="row">
+						<div class="col">
+							<router-outlet></router-outlet>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

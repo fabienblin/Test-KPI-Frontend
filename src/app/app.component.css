@@ -24,6 +24,8 @@ a{
 	height: 15vh;
 	background-color: rgb(71, 119, 81);
 	color: white;
+	position: fixed;
+	top: 0;
 }
 	#header > .row{
 		height: 100%;
@@ -31,6 +33,9 @@ a{
 
 #middle{
 	height: 80vh;
+	margin-top: 15vh;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 	#middle > .row{
 		height: 100%;
@@ -39,28 +44,57 @@ a{
 #nav{
  background-color: rgb(116, 116, 116);
  color: white;
+ position: fixed;
+ height: 80vh;
+ width: 16vw;
 }
 
 #main{
 	color: rgb(61, 90, 67);
+	margin-left: 16vw;
+	width: 84vw;
+	padding: 0;
 }
 
 #footer{
 	height: 5vh;
 	background-color: rgb(63, 63, 63);
 	color: white;
+	position: fixed;
+	bottom: 0;
 }
 	#footer > .row{
 		height: 100%;
 	}
 
-.nav-item form{
+#padded-nav-item{
 	padding: 15px;
 }
 
 #short-infos{
-	height: 30px;
+	height: 3vh;
 	background-color: rgb(41, 70, 47);
 	color: white;
 	font-size: 0.8em;
+}
+
+#page-title{
+	height: 7vh;
+	background-color: rgb(204, 204, 204);
+	margin-top: 3vh;
+}
+
+#short-infos, #page-title{
+	position: fixed;
+}
+
+#principal{
+	height: 70vh; /* 100 - header - footer - short-infos - page-title = 70 */
+	margin-top: 10vh;
+	overflow-y: auto;
+}
+
+#short-infos, #page-title, #principal{
+	margin-left: 0;
+	width: 100%;
 }

@@ -5,6 +5,7 @@ import { InvestmentDetailComponent } from './investment-detail/investment-detail
 import { InvestmentsComponent } from './investments/investments.component';
 
 const routes: Routes = [
+	{ path: 'home', redirectTo: '', pathMatch: 'full' },
 	{ path: '', component: HomeComponent },
 	{ path: 'investments', component: InvestmentsComponent },
 	{ path: 'detail/:id', component: InvestmentDetailComponent}
