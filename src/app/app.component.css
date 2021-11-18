@@ -7,8 +7,12 @@ body{
 
 h1, h2{
 	text-shadow: 1px 1px black;
+}
+
+h1, h2, h3, h4, h5{
 	font-weight: bold;
 }
+
 
 a{
 	color: rgb(82, 182, 103);
@@ -20,6 +24,7 @@ a{
 	#nav a{
 		color: white;
 		font-size: 1.3em;
+		font-weight: bold;
 	}
 
 	a:hover{
