@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Investment } from '../investment';
+import { ActivatedRoute } from '@angular/router';
+import { InvestmentService } from '../investment.service';
+import { ShortInfosService } from '../short-infos.service';
+import { PageTitleService } from '../page-title.service';
 
 @Component({
   selector: 'app-investment-detail',
@@ -7,9 +12,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestmentDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+	  private route: ActivatedRoute,
+	  private investmentService: InvestmentService,
+	  private shortInfos: ShortInfosService,
+	  private pageTitle: PageTitleService) { }
 
   ngOnInit(): void {
+	  this.getInvestment()
+	  this.pageTitle.definePageTitle("Details Of Investment");
+  }
+
+  investment: Investment | undefined;
+
+  getInvestment(): void {
+	const id = Number(this.route.snapshot.paramMap.get('id'));
+	this.investmentService.getInvestment(id).subscribe(investment => this.investment = investment)
   }
 
 }

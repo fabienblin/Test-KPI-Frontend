@@ -1,1 +1,98 @@
-<h3>DETAILS</h3>
+<div *ngIf="investment">
+
+	<form action="">
+
+
+		<div class="form-group">
+			<label for="titreoperation">Titre Operation</label>
+			<input type="text" class="form-control" id="titreoperation" value="{{investment.titreoperation}}">
+		</div>
+
+		<div class="form-group">
+			<label for="entreprise">Entreprise</label>
+			<input type="text" class="form-control" id="entreprise" value="{{investment.entreprise}}">
+		</div>
+
+		<div class="form-group">
+			<label for="annee_de_livraison">Année de Livraison</label>
+			<input type="text" class="form-control" id="annee_de_livraison" value="{{investment.annee_de_livraison}}">
+		</div>
+		
+		<div class="form-group">
+			<label for="ville">Ville</label>
+			<input type="text" class="form-control" id="ville" value="{{investment.ville}}">
+		</div>
+
+		<div class="form-group">
+			<label for="mandataire">Mandataire</label>
+			<input type="text" class="form-control" id="mandataire" value="{{investment.mandataire}}">
+		</div>
+
+		<div class="form-group">
+			<label for="ppi">PPI</label>
+			<input type="text" class="form-control" id="ppi" value="{{investment.ppi}}">
+		</div>
+
+		<div class="form-group">
+			<label for="lycee">Lycée</label>
+			<input type="text" class="form-control" id="lycee" value="{{investment.lycee}}">
+		</div>
+
+		<div class="form-group">
+			<label for="notification_du_marche">Notification du Marché</label>
+			<input type="text" class="form-control" id="notification_du_marche" value="{{investment.notification_du_marche}}">
+		</div>
+
+		<div class="form-group">
+			<label for="codeuai">Code UAI</label>
+			<input type="text" class="form-control" id="codeuai" value="{{investment.codeuai}}">
+		</div>
+
+		<div class="form-group">
+			<label for="longitude">Longitude</label>
+			<input type="text" class="form-control" id="longitude" value="{{investment.longitude}}">
+		</div>
+
+		<div class="form-group">
+			<label for="etat_d_avancement">Etat d'Avancement</label>
+			<input type="text" class="form-control" id="etat_d_avancement" value="{{investment.etat_d_avancement}}">
+		</div>
+
+		<div class="form-group">
+			<label for="montant_des_ap_votes_en_meu">Montant des AP votés en MEU</label>
+			<input type="text" class="form-control" id="montant_des_ap_votes_en_meu" value="{{investment.montant_des_ap_votes_en_meu}}">
+		</div>
+
+		<div class="form-group">
+			<label for="cao_attribution">CAO Attibution</label>
+			<input type="text" class="form-control" id="cao_attribution" value="{{investment.cao_attribution}}">
+		</div>
+		
+		<div class="form-group">
+			<label for="latitude">Latitude</label>
+			<input type="text" class="form-control" id="latitude" value="{{investment.latitude}}">
+		</div>
+
+		<div class="form-group">
+			<label for="maitrise_d_oeuvre">Maitrise d'OEuvre</label>
+			<input type="text" class="form-control" id="maitrise_d_oeuvre" value="{{investment.maitrise_d_oeuvre}}">
+		</div>
+
+		<div class="form-group">
+			<label for="mode_de_devolution">Mode de Dévolution</label>
+			<input type="text" class="form-control" id="mode_de_devolution" value="{{investment.mode_de_devolution}}">
+		</div>
+
+		<div class="form-group">
+			<label for="annee_d_individualisation">Année d'Individualisation</label>
+			<input type="text" class="form-control" id="annee_d_individualisation" value="{{investment.annee_d_individualisation}}">
+		</div>
+
+		<div class="form-group">
+			<label for="enveloppe_prev_en_meu">Enveloppe Prevue en MEU</label>
+			<input type="text" class="form-control" id="enveloppe_prev_en_meu" value="{{investment.enveloppe_prev_en_meu}}">
+		</div>
+		<br>
+		<button type="submit" class="btn btn-success">Enregistrer</button>
+	</form>
+</div>

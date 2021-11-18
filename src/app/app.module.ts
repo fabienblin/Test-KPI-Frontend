@@ -8,6 +8,8 @@ import { InvestmentDetailComponent } from './investment-detail/investment-detail
 import { HomeComponent } from './home/home.component';
 import { InvestmentSearchComponent } from './investment-search/investment-search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PageTitleComponent } from './page-title/page-title.component';
+import { ShortInfosComponent } from './short-infos/short-infos.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
     InvestmentsComponent,
     InvestmentDetailComponent,
     HomeComponent,
-    InvestmentSearchComponent
+    InvestmentSearchComponent,
+    PageTitleComponent,
+    ShortInfosComponent
   ],
   imports: [
     BrowserModule,
