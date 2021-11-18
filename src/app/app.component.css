@@ -18,8 +18,6 @@ a{
 	color: rgb(82, 182, 103);
 	text-decoration: none;
 	border-bottom: 1px solid transparent;
-	/* font-weight: bold; */
-	/* text-shadow: 1px 1px grey; */
 }
 	#nav a{
 		color: white;
@@ -37,6 +35,11 @@ a{
 		color: rgb(147, 179, 154);
 		border-bottom: 1px solid transparent;
 	}
+
+label{
+	font-weight: bold;
+	padding-left: 10px;
+}
 
 #header{
 	height: 15vh;
@@ -115,4 +118,8 @@ a{
 #short-infos, #page-title, #principal{
 	margin-left: 0;
 	width: 100%;
+}
+
+.form-group{
+	margin-top: 15px;
 }

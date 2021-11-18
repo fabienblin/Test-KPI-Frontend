@@ -1,12 +1,18 @@
-<label for="search">Get Investment By ID</label>
-<div class="input-group mb-3">
-	<input type="text"
-		#searchBox
-		id="search"
-		(input)="search(searchBox.valueAsNumber)"
-		class="form-control"
-		placeholder="ID"
-		aria-label="Recipient's username"
-		aria-describedby="button-addon2">
-	<button class="btn btn-outline-light" type="button" id="button-addon2">Search</button>
-</div>
+<form [formGroup]="checkoutForm" (ngSubmit)="search()">
+	<label for="search">Get Investment By ID</label>
+	<div class="input-group mb-3">
+		<input
+			formControlName="id"
+			type="text"
+			name="id"
+			id="id"
+			class="form-control"
+			placeholder="ID">
+
+		<button
+			class="btn btn-outline-light"
+			type="submit">
+			Search
+		</button>
+	</div>
+</form>
