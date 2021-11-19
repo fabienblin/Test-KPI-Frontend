@@ -10,6 +10,7 @@ import { InvestmentSearchComponent } from './investment-search/investment-search
 import { HttpClientModule } from '@angular/common/http';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { ShortInfosComponent } from './short-infos/short-infos.component';
+import { DocumentationComponent } from './documentation/documentation.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ShortInfosComponent } from './short-infos/short-infos.component';
     HomeComponent,
     InvestmentSearchComponent,
     PageTitleComponent,
-	ShortInfosComponent
+	ShortInfosComponent,
+ DocumentationComponent
   ],
   imports: [
     BrowserModule,

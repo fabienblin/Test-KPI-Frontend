@@ -113,6 +113,8 @@ label{
 	height: 70vh; /* 100 - header - footer - short-infos - page-title = 70 */
 	margin-top: 10vh;
 	overflow-y: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
 #short-infos, #page-title, #principal{

@@ -3,3 +3,9 @@
 	top: 19.5vh;
 	right: 2vw;
 }
+
+#buttons button{
+	height: 4vh;
+	font-size: 1.5vh;
+	line-height: 1.5vh;
+}
