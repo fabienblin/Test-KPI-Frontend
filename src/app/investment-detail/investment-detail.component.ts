@@ -40,7 +40,7 @@ export class InvestmentDetailComponent implements OnInit {
 
 	save(): void {
 		if (this.form.valid) {
-			this.investmentService.updateInvestment(this.form.value)
+			this.investmentService.updateInvestment(this.form.value).subscribe(() => this.goBack())
 		}
 	}
 

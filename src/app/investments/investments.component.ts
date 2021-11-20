@@ -31,7 +31,7 @@ export class InvestmentsComponent implements OnInit {
 		this.investmentService.getInvestmentList().subscribe(investments => this.investments = investments);
 	}
 
-	redirectToCreate(): void {
+	redirectToCreateForm(): void {
 		this.route.navigate(["create"]).then(() => {
 			window.location.reload();
 		});

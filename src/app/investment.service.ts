@@ -24,6 +24,7 @@ export class InvestmentService {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
 	public formGroup = this.formBuilder.group({
+		id: "",
 		titreoperation: "",
 		entreprise: "",
 		annee_de_livraison: "",
