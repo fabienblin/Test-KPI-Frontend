@@ -1,4 +1,4 @@
-<div *ngIf="investment | async">
+<div>
 	<form [formGroup]="form">
 		
 		<div class="form-group">
@@ -95,10 +95,7 @@
 
 		<div id="buttons" class="row justify-content-evenly">
 			<div class="col d-flex justify-content-center">
-				<button type="button" class="btn btn-success" (click)="save()">Save</button>
-			</div>
-			<div class="col d-flex justify-content-center">
-				<button type="button" class="btn btn-danger" (click)="delete()">Delete</button>
+				<button type="submit" class="btn btn-success" (click)="save()">Save</button>
 			</div>
 		</div>
 

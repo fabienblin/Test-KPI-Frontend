@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageTitleComponent } from './page-title/page-title.component';
 import { ShortInfosComponent } from './short-infos/short-infos.component';
 import { DocumentationComponent } from './documentation/documentation.component';
+import { InvestmentCreateComponent } from './investment-create/investment-create.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DocumentationComponent } from './documentation/documentation.component'
     InvestmentSearchComponent,
     PageTitleComponent,
 	ShortInfosComponent,
- DocumentationComponent
+ DocumentationComponent,
+ InvestmentCreateComponent
   ],
   imports: [
     BrowserModule,
