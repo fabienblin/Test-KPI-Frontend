@@ -1,0 +1,107 @@
+<table class="table table-striped table-hover table-bordered border-success">
+	<thead>
+		<tr id="labels">
+			<th scope="col" class="actions"></th>
+			<th scope="col">ID<div><button class="btn btn-outline-primary material-icon"
+						disabled>expand_more</button></div></th>
+			<th scope="col">Titre Opération<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Entreprise<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Année Livraison<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Ville<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Mandataire<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">PPI<div><button class="btn btn-outline-light material-icon">chevron_right</button></div></th>
+			<th scope="col">Lycée<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Notification du Marché<div><button class="btn
+						btn-outline-light material-icon">chevron_right</button></div></th>
+			<th scope="col">Code UAI<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Longitude<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Etat d'Avancement<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Montant des AP<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">CAO d'Attribution<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Latitude<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Maitrise d'OEuvre<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Mode de Dévolution<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+			<th scope="col">Année d'Individualisation<div><button class="btn
+						btn-outline-light material-icon">chevron_right</button></div></th>
+			<th scope="col">Enveloppe MEU<div><button class="btn btn-outline-light
+						material-icon">chevron_right</button></div></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let investment of investments">
+			<td class="actions">
+				<a routerLink="/detail/{{investment.id}}"><button type="button" class="btn
+						btn-success material-icon">edit</button></a>
+				<button type="button" class="btn btn-danger material-icon"
+					(click)="delete(investment)">delete</button>
+			</td>
+			<td>{{investment.id}}</td>
+			<td>{{investment.titreoperation}}</td>
+			<td>{{investment.entreprise}}</td>
+			<td>{{investment.annee_de_livraison}}</td>
+			<td>{{investment.ville}}</td>
+			<td>{{investment.mandataire}}</td>
+			<td>{{investment.ppi}}</td>
+			<td>{{investment.lycee}}</td>
+			<td>{{investment.notification_du_marche}}</td>
+			<td>{{investment.codeuai}}</td>
+			<td>{{investment.longitude}}</td>
+			<td>{{investment.etat_d_avancement}}</td>
+			<td>{{investment.montant_des_ap_votes_en_meu}}</td>
+			<td>{{investment.cao_attribution}}</td>
+			<td>{{investment.latitude}}</td>
+			<td>{{investment.maitrise_d_oeuvre}}</td>
+			<td>{{investment.mode_de_devolution}}</td>
+			<td>{{investment.annee_d_individualisation}}</td>
+			<td>{{investment.enveloppe_prev_en_meu}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<div id="buttons" class="row justify-content-evenly">
+	<div class="col d-flex justify-content-center">
+		<form>
+			<div class="row">
+				<div class="col formTitle">
+					Filter
+				</div>
+				<div class="col">
+					<select class="form-select" name="filter">
+						<option value="ville">Ville</option>
+						<option value="etat_d_avancement">Etat d'Avancement</option>
+					</select>
+				</div>
+				<div class="col">
+					<div class="input-group mb-3">
+						<input
+							formControlName="id"
+							type="text"
+							name="id"
+							id="id"
+							class="form-control">
+
+						<button
+							class="btn btn-outline-light material-icon"
+							type="submit">
+							search
+						</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

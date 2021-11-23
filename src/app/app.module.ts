@@ -12,6 +12,7 @@ import { PageTitleComponent } from './page-title/page-title.component';
 import { ShortInfosComponent } from './short-infos/short-infos.component';
 import { DocumentationComponent } from './documentation/documentation.component';
 import { InvestmentCreateComponent } from './investment-create/investment-create.component';
+import { InvestmentFilterComponent } from './investment-filter/investment-filter.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InvestmentCreateComponent } from './investment-create/investment-create
     PageTitleComponent,
 	ShortInfosComponent,
  DocumentationComponent,
- InvestmentCreateComponent
+ InvestmentCreateComponent,
+ InvestmentFilterComponent
   ],
   imports: [
     BrowserModule,
