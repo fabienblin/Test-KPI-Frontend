@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InvestmentService } from '../investment.service';
 import { PageTitleService } from '../page-title.service';
 import { Location } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
@@ -19,7 +19,8 @@ export class InvestmentDetailComponent implements OnInit {
 		private route: ActivatedRoute,
 		private investmentService: InvestmentService,
 		private pageTitle: PageTitleService,
-		private location: Location) {
+		private location: Location,
+		private formBuilder: FormBuilder) {
 
 		this.investment = this.getInvestment().pipe(
 			tap(investment => this.form.patchValue(investment))
@@ -30,7 +31,27 @@ export class InvestmentDetailComponent implements OnInit {
 		this.pageTitle.definePageTitle("Details Of Investment");
 	}
 
-	form = this.investmentService.formGroup;
+	form = this.formBuilder.group({
+		id: "",
+		titreoperation: "",
+		entreprise: "",
+		annee_de_livraison: "",
+		ville: "",
+		mandataire: "",
+		ppi: "",
+		lycee: "",
+		notification_du_marche: "",
+		codeuai: "",
+		longitude: "",
+		etat_d_avancement: "",
+		montant_des_ap_votes_en_meu: "",
+		cao_attribution: "",
+		latitude: "",
+		maitrise_d_oeuvre: "",
+		mode_de_devolution: "",
+		annee_d_individualisation: "",
+		enveloppe_prev_en_meu: ""
+	});
 	investment: Observable<Investment>;
 
 	getInvestment(): Observable<Investment> {

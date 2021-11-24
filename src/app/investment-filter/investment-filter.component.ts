@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Investment } from '../investment';
 import { InvestmentService } from '../investment.service';
 import { PageTitleService } from '../page-title.service';
@@ -12,7 +13,8 @@ export class InvestmentFilterComponent implements OnInit {
 
 	constructor(
 		private investmentService: InvestmentService,
-		private pageTitle: PageTitleService
+		private pageTitle: PageTitleService,
+		private formBuilder: FormBuilder
 	) { }
 
 	ngOnInit(): void {
@@ -21,7 +23,10 @@ export class InvestmentFilterComponent implements OnInit {
 	}
 
 	investments: Investment[] = [];
-	filter: string = "id";
+	filterForm = this.formBuilder.group({
+		filterBy: "",
+		filterVal: ""
+	});
 
 	getInvestments(): void {
 		this.investmentService.getInvestmentList().subscribe(investments => this.investments = investments);
@@ -30,5 +35,9 @@ export class InvestmentFilterComponent implements OnInit {
 	delete(investment: Investment) {
 		this.investments = this.investments.filter(inv => inv !== investment);
 		this.investmentService.deleteInvestment(investment.id).subscribe();
+	}
+
+	filter(): void {
+		this.investmentService.getInvestmentListFiltered(this.filterForm.value).subscribe(investments => this.investments = investments);
 	}
 }

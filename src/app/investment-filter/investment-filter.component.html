@@ -74,32 +74,37 @@
 
 <div id="buttons" class="row justify-content-evenly">
 	<div class="col d-flex justify-content-center">
-		<form>
+		<form [formGroup]="filterForm">
 			<div class="row">
 				<div class="col formTitle">
 					Filter
 				</div>
 				<div class="col">
-					<select class="form-select" name="filter">
+					<select class="form-select" formControlName="filterBy">
+						<option value="" selected>No Filter</option>
 						<option value="ville">Ville</option>
 						<option value="etat_d_avancement">Etat d'Avancement</option>
 					</select>
 				</div>
-				<div class="col">
-					<div class="input-group mb-3">
+					<div class="col" *ngIf="filterForm.value['filterBy'] == 'ville'">
 						<input
-							formControlName="id"
 							type="text"
-							name="id"
-							id="id"
-							class="form-control">
-
-						<button
-							class="btn btn-outline-light material-icon"
-							type="submit">
-							search
-						</button>
+							class="form-control"
+							formControlName="filterVal">
 					</div>
+					<div class="col" *ngIf="filterForm.value['filterBy'] == 'etat_d_avancement'">
+						<select class="form-select" formControlName="filterVal">
+							<option value="Opération livrée">Opération Livrée</option>
+							<option value="En Chantier">En Chantier</option>
+							<option value="Abandonné">Abandonné</option>
+							<option value="Etude de maîtrise d'œuvre">Etude de maîtrise d'œuvre</option>
+							<option value="Sélection mandataire">Sélection Mandataire</option>
+							<option value="Suspendue">Suspendue</option>
+						</select>
+					</div>
+				
+				<div class="col">
+					<button class="btn btn-success material-icon" (click)="filter()">search</button>
 				</div>
 			</div>
 		</form>

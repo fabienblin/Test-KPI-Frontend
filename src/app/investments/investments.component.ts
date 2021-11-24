@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Investment } from '../investment';
 import { InvestmentService } from '../investment.service';
 import { PageTitleService } from '../page-title.service';
-// import { ShortInfosService } from '../short-infos.service';
+import { ShortInfosService } from '../short-infos.service';
 
 @Component({
 	selector: 'app-investments',
@@ -14,15 +14,15 @@ export class InvestmentsComponent implements OnInit {
 
 	constructor(
 		private investmentService: InvestmentService,
-		// private shortInfos: ShortInfosService,
 		private pageTitle: PageTitleService,
+		private shortInfos: ShortInfosService,
 		private route: Router
 	) { }
 
 	ngOnInit(): void {
 		this.getInvestments();
-		// this.shortInfos.defineShortInfo("");
-		this.pageTitle.definePageTitle("List All Investments")
+		this.shortInfos.defineShortInfo("");
+		this.pageTitle.definePageTitle("List All Investments");
 	}
 
 	investments: Investment[] = [];

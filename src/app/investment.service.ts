@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ShortInfosService } from './short-infos.service';
 import { tap } from 'rxjs/operators';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Injectable({
 	providedIn: 'root'
@@ -14,36 +13,12 @@ export class InvestmentService {
 
 	constructor(
 		private http: HttpClient,
-		private shortInfos: ShortInfosService,
-		private formBuilder: FormBuilder) {
-
-		}
+		private shortInfos: ShortInfosService) { }
 
 	private investmentsUrl = environment.backend_url + "investments/";
 	private httpOptions = {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 	};
-	public formGroup = this.formBuilder.group({
-		id: "",
-		titreoperation: "",
-		entreprise: "",
-		annee_de_livraison: "",
-		ville: "",
-		mandataire: "",
-		ppi: "",
-		lycee: "",
-		notification_du_marche: "",
-		codeuai: "",
-		longitude: "",
-		etat_d_avancement: "",
-		montant_des_ap_votes_en_meu: "",
-		cao_attribution: "",
-		latitude: "",
-		maitrise_d_oeuvre: "",
-		mode_de_devolution: "",
-		annee_d_individualisation: "",
-		enveloppe_prev_en_meu: ""
-	});
 
 	getInvestmentList(): Observable<Investment[]> {
 		return this.http.get<Investment[]>(this.investmentsUrl);
@@ -54,6 +29,20 @@ export class InvestmentService {
 		return this.http.get<Investment>(url).pipe(
 			tap((inv: Investment) => this.shortInfos.defineShortInfo("ID: " + inv.id + " - Titre Operation: " + inv.titreoperation))
 		);
+	}
+
+	getInvestmentListFiltered(filterForm: {filterBy:String, filterVal:String}): Observable<Investment[]> {
+		const filterBy = filterForm.filterBy;
+		const filterVal = filterForm.filterVal;
+
+		if (filterBy == "" || filterVal == "") {
+			this.shortInfos.defineShortInfo("No Filter");
+			return this.getInvestmentList();
+		} else {
+			const url = this.investmentsUrl + "filter/" + filterBy + "/" + filterVal + "/";
+			this.shortInfos.defineShortInfo("Filter by " + filterBy + " as " + filterVal)
+			return this.http.get<Investment[]>(url);
+		}
 	}
 
 	updateInvestment(investment: Investment): Observable<any> {

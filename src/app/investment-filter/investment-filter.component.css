@@ -45,3 +45,7 @@ th{
 	height: 4vh;
 	line-height: 4vh;
 }
+
+form .col{
+	height: 7vh;
+}
